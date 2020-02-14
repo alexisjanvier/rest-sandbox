@@ -8,10 +8,15 @@
   "license": "GPL-3.0",
   "private": false,
   "scripts": {
-    "openapi:bundle": "swagger-cli bundle ./openapi/index.yaml -o ./openapi/openapi.json -r",
-    "openapi:check": "swagger-cli validate ./openapi/openapi.json"
+    "openapi:bundle": "speccy resolve -o ./openapi/openapi.json ./openapi/index.yaml",
+    "openapi:check": "speccy lint ./openapi/openapi.json"
   },
   "dependencies": {
-    "swagger-cli": "3.0.1"
+    "@types/react": "16.9.19",
+    "mobx": "5.15.4",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "speccy": "0.11.0",
+    "styled-components": "5.0.1"
   }
 }

@@ -1,0 +1,14 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: the famous Roller Derby API
+  contact:
+    email: contact@alexisjanvier.dev
+security: []
+tags:
+  - name: my tag
+paths: {}
+components:
+  securitySchemes: {}
+  schemas: {}
+  parameters: {}
