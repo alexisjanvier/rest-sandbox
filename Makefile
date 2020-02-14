@@ -20,3 +20,5 @@ openapi-bundle: ## Bundle the OpenAPI schema
 openapi-validate: ## Validate the OpenAPI schema
 	@npm run openapi:check
 
+openapi-documentation: ## Start documentation server
+	@npm run openapi:serve

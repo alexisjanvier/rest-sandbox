@@ -9,7 +9,8 @@
   "private": false,
   "scripts": {
     "openapi:bundle": "speccy resolve -o ./openapi/openapi.json ./openapi/index.yaml",
-    "openapi:check": "speccy lint ./openapi/openapi.json"
+    "openapi:check": "speccy lint ./openapi/openapi.json",
+    "openapi:serve": "speccy serve ./openapi/openapi.json"
   },
   "dependencies": {
     "@types/react": "16.9.19",
