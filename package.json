@@ -1,0 +1,17 @@
+{
+  "name": "rest-sandbox",
+  "version": "0.0.1",
+  "description": "Some exemples about REST APIs",
+  "main": "index.js",
+  "repository": "git@github.com:alexisjanvier/rest-sandbox.git",
+  "author": "Alexis Janvier <alexis@marmelab.com> (https://www.marmelab.com)",
+  "license": "GPL-3.0",
+  "private": false,
+  "scripts": {
+    "openapi:bundle": "swagger-cli bundle ./openapi/index.yaml -o ./openapi/openapi.json -r",
+    "openapi:check": "swagger-cli validate ./openapi/openapi.json"
+  },
+  "dependencies": {
+    "swagger-cli": "3.0.1"
+  }
+}
