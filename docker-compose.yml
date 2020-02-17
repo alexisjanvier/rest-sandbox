@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+    documentation:
+      image: node:13-alpine
+      volumes:
+          - .:/app
+      working_dir: '/app'
+      user: '${UID}:${GID}'
+      ports:
+          - 5000:5000
+      command: 'npm run openapi:serve'
