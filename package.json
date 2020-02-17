@@ -8,7 +8,7 @@
   "license": "GPL-3.0",
   "private": false,
   "scripts": {
-    "openapi:bundle": "speccy resolve -o ./openapi/openapi.json ./openapi/index.yaml",
+    "openapi:bundle": "swagger-cli bundle ./openapi/index.yaml -o ./openapi/openapi.json -r",
     "openapi:check": "speccy lint ./openapi/openapi.json",
     "openapi:serve": "speccy serve ./openapi/openapi.json"
   },
@@ -18,6 +18,7 @@
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "speccy": "0.11.0",
-    "styled-components": "4.1.1"
+    "styled-components": "4.1.1",
+    "swagger-cli": "3.0.1"
   }
 }
