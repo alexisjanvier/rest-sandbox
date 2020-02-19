@@ -1,0 +1,24 @@
+--- 
+Player: 
+  description: "Un.e joueur.euse de Roller Derby"
+  type: object
+  properties: 
+    id: 
+      type: string
+    name: 
+      type: string
+    number: 
+      type: integer
+    picture: 
+      type: string
+    more: 
+      type: array
+      items: 
+        type: object
+        properties: 
+          answer: 
+            type: string
+          question:
+            type: string
+
+

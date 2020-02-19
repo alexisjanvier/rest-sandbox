@@ -23,7 +23,7 @@ components:
 info:
     version: 1.0.0
     title: The Famous Roller Derby API - FRDA
-    description: Find all the teams and matches of Roller Derby in Europe
+    description: Trouver toutes les informations sur les équipes et les matchs de Roller Derby en Europe.
     termsOfService: https://roller-derby.io/api/terms/
     contact:
         name: FRDA Support

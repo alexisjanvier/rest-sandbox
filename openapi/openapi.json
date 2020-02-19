@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "The Famous Roller Derby API - FRDA",
-    "description": "Find all the teams and matches of Roller Derby in Europe",
+    "description": "Trouver toutes les informations sur les équipes et les matchs de Roller Derby en Europe.",
     "termsOfService": "https://roller-derby.io/api/terms/",
     "contact": {
       "name": "FRDA Support",
@@ -24,7 +24,40 @@
   "paths": {},
   "components": {
     "securitySchemes": {},
-    "schemas": {},
+    "schemas": {
+      "Player": {
+        "description": "Un.e joueur.euse de Roller Derby",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          },
+          "picture": {
+            "type": "string"
+          },
+          "more": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "answer": {
+                  "type": "string"
+                },
+                "question": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "parameters": {}
   }
 }
