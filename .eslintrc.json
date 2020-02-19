@@ -1,0 +1,13 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": ["plugin:prettier/recommended"],
+  "rules": {
+    "indent": ["error", 4],
+    "linebreak-style": ["error", "unix"],
+    "prefer-expect-assertions": 0,
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
+  }
+}
