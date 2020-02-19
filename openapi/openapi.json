@@ -30,32 +30,52 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "readOnly": true
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 50
           },
           "number": {
-            "type": "integer"
+            "type": "integer",
+            "maximum": 9999,
+            "format": "int32"
           },
           "picture": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "more": {
             "type": "array",
+            "minItems": 0,
+            "maxItems": 5,
             "items": {
               "type": "object",
               "properties": {
-                "answer": {
-                  "type": "string"
-                },
                 "question": {
-                  "type": "string"
+                  "type": "string",
+                  "minLength": 20,
+                  "maxLength": 999
+                },
+                "answer": {
+                  "type": "string",
+                  "nullable": true
                 }
-              }
+              },
+              "required": [
+                "question"
+              ]
             }
           }
-        }
+        },
+        "required": [
+          "id",
+          "name",
+          "number",
+          "picture"
+        ]
       }
     },
     "parameters": {}
