@@ -2,9 +2,17 @@
   "openapi": "3.0.2",
   "info": {
     "version": "1.0.0",
-    "title": "The famous Roller Derby API",
+    "title": "The Famous Roller Derby API - FRDA",
+    "description": "Find all the teams and matches of Roller Derby in Europe",
+    "termsOfService": "https://roller-derby.io/api/terms/",
     "contact": {
-      "email": "contact@alexisjanvier.dev"
+      "name": "FRDA Support",
+      "url": "https://roller-derby.io/api/support",
+      "email": "api@roller-derby.io"
+    },
+    "license": {
+      "name": "GNU GPLv3",
+      "url": "https://github.com/CaenCamp/jobs-caen-camp/blob/master/LICENSE"
     }
   },
   "security": [],
