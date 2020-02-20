@@ -1,28 +1,31 @@
 {
-  "name": "rest-sandbox",
-  "version": "0.0.1",
-  "description": "Some exemples about REST APIs",
-  "main": "index.js",
-  "repository": "git@github.com:alexisjanvier/rest-sandbox.git",
-  "author": "Alexis Janvier <alexis@marmelab.com> (https://www.marmelab.com)",
-  "license": "GPL-3.0",
-  "private": false,
-  "scripts": {
-    "openapi:bundle": "swagger-cli bundle ./openapi/index.yaml -o ./openapi/openapi.json -r",
-    "openapi:check": "speccy lint ./openapi/openapi.json",
-    "openapi:serve": "speccy serve ./openapi/openapi.json"
-  },
-  "dependencies": {
-    "@types/react": "16.9.20",
-    "eslint": "6.8.0",
-    "eslint-config-prettier": "6.10.0",
-    "eslint-plugin-prettier": "3.1.2",
-    "mobx": "5.15.4",
-    "prettier": "1.19.1",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "speccy": "0.11.0",
-    "styled-components": "5.0.1",
-    "swagger-cli": "3.0.1"
-  }
+    "name": "rest-sandbox",
+    "version": "0.0.1",
+    "description": "Some exemples about REST APIs",
+    "main": "index.js",
+    "repository": "git@github.com:alexisjanvier/rest-sandbox.git",
+    "author": "Alexis Janvier <alexis@marmelab.com> (https://www.marmelab.com)",
+    "license": "GPL-3.0",
+    "private": false,
+    "scripts": {
+        "openapi:bundle": "swagger-cli bundle ./openapi/index.yaml -o ./openapi/openapi.json -r",
+        "openapi:check": "speccy lint ./openapi/openapi.json",
+        "openapi:serve": "speccy serve ./openapi/openapi.json",
+        "generate-fetcher": "restful-react import --file openapi/openapi.json --output react/frdaFetcher.tsx",
+        "postgenerate-fetcher": "prettier react/frdaFetcher.tsx --write"
+    },
+    "dependencies": {
+        "@types/react": "16.9.20",
+        "eslint": "6.8.0",
+        "eslint-config-prettier": "6.10.0",
+        "eslint-plugin-prettier": "3.1.2",
+        "mobx": "5.15.4",
+        "prettier": "1.19.1",
+        "react": "16.12.0",
+        "react-dom": "16.12.0",
+        "restful-react": "9.11.1",
+        "speccy": "0.11.0",
+        "styled-components": "5.0.1",
+        "swagger-cli": "3.0.1"
+    }
 }

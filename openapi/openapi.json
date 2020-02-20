@@ -15,6 +15,16 @@
       "url": "https://roller-derby.io/api/LICENSE"
     }
   },
+  "servers": [
+    {
+      "url": "http://localhost:5003",
+      "description": "Serveur de mocks avec [Prism](https://stoplight.io/open-source/prism)"
+    },
+    {
+      "url": "http://localhost:5004",
+      "description": "Serveur de mocks avec [APISprout](https://github.com/danielgtaylor/apisprout)"
+    }
+  ],
   "security": [],
   "tags": [
     {

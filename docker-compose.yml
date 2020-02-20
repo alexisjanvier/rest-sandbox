@@ -22,3 +22,17 @@ services:
         image: swaggerapi/swagger-editor
         ports:
             - 5002:8080
+    prism:
+        image: stoplight/prism:3
+        volumes:
+            - ./openapi:/openapi
+        ports:
+            - 5003:4010
+        command: mock -d -h 0.0.0.0 "/openapi/openapi.json"
+    api-sprout:
+        image: danielgtaylor/apisprout
+        volumes:
+            - ./openapi:/openapi
+        ports:
+            - 5004:8000
+        command: --watch /openapi/openapi.json

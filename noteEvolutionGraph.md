@@ -178,30 +178,43 @@ Mes paroisses :
  - generation d'admin : react-admin (et Api Plateform)
  - coding caen camp
 
+## Tooling
 
+### Editeurs
 
-		parameters:
-		- name: filter
-			in: query
-			description: Filters to apply to query. It's a stringified json object, with key/value filter separated by comma
-			required: false
-			explode: true
-			schema:
-				type: string
-			example: '{"number":75,"name":"Vit Ô Bar"}'
-		- name: sort
-			in: query
-			description: Sort to apply to query. A stringified array with [sortProp, sortDirection]
-			required: false
-			explode: true
-			schema:
-				type: string
-			example: '["id","ASC"]'
-		- name: pagination
-			in: query
-			description: Pagination parameters. A stringified array with [perPage, currentPage]
-			required: false
-			explode: true
-			schema:
-				type: string
-			example: "[10,3]"
+Parler des conf yaml IDE et de eslint et prettier
+Puis la cli de validation et de consolidation (les deux)
+- Plugin Vscode https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi
+- StopLight Studio https://stoplight.io/studio
+
+### Documentation
+
+- Redoc
+- Swagger
+
+### Mocker
+
+- Sandox mock en sass https://getsandbox.com/
+- Prism mock open-source en js https://stoplight.io/open-source/prism
+- API Sprout open source en Go https://github.com/danielgtaylor/apisprout
+
+### Check securité
+
+- APISecurity.io https://apisecurity.io/tools/audit/
+
+### Validation et tests
+
+- express-openapi-validator https://github.com/cdimascio/express-openapi-validator
+- assertible https://assertible.com/
+- dredd https://dredd.org/en/latest/
+
+### SDK generator
+
+- Code-Gen as a Service https://www.apimatic.io/continuous-code-generation/
+- ApiMatic-cli https://github.com/apimatic/apimatic-cli
+- Restful-react generation de hook react https://github.com/contiamo/restful-react#code-generation
+
+### Sass
+
+- MrinDoc : genere la doc depuis le schema : https://mrin9.github.io/OpenAPI-Viewer
+- Apiomatic : fait ... tout !! https://www.apimatic.io/developer-experience-portal/

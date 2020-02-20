@@ -31,3 +31,10 @@ start-tooling: ## Start tooling containers, including documentation
 	@docker-compose up -d
 stop-tooling: ## Stop toolings containers
 	@docker-compose down
+
+# =====================================================================
+# SDK generator =======================================================
+# =====================================================================
+
+generate-hook: ## Generate hook for react against the OpenAPI schema
+	@${DOCKER} npm run generate-fetcher
