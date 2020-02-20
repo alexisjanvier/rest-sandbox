@@ -1,12 +1,24 @@
-version: '3.5'
+version: "3.5"
 
 services:
-    documentation:
-      image: node:13-alpine
-      volumes:
-          - .:/app
-      working_dir: '/app'
-      user: '${UID}:${GID}'
-      ports:
-          - 5000:5000
-      command: 'npm run openapi:serve'
+    redoc:
+        image: node:13-alpine
+        volumes:
+            - .:/app
+        working_dir: "/app"
+        user: "${UID}:${GID}"
+        ports:
+            - 5000:5000
+        command: "npm run openapi:serve"
+    swagger-ui:
+        image: swaggerapi/swagger-ui
+        volumes:
+            - ./openapi:/openapi
+        environment:
+            - SWAGGER_JSON=/openapi/openapi.json
+        ports:
+            - 5001:8080
+    swagger-editor:
+        image: swaggerapi/swagger-editor
+        ports:
+            - 5002:8080

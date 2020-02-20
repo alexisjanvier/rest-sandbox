@@ -27,7 +27,7 @@ openapi-bundle: ## Bundle the OpenAPI schema
 openapi-validate: ## Validate the OpenAPI schema
 	@${DOCKER} npm run openapi:check
 
-start-documentation: ## Start documentation server in container
+start-tooling: ## Start tooling containers, including documentation
 	@docker-compose up -d
-stop-documentation: ## Stop documentation server in container
+stop-tooling: ## Stop toolings containers
 	@docker-compose down

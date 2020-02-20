@@ -150,3 +150,30 @@ PlayerMoreItem:
   required:
     - question
 ```
+
+
+
+
+
+# Notes en vrac conf
+
+Une fois les schema présenté
+
+Tooling :
+
+- linting ecriture
+- editeur
+- génération de la doc
+- approche code first (mais je préfère Contrat first)
+- Validation live
+- Generation des tests
+- serveur de mock
+- generation de clients et de serveur
+
+Pour le conclusion, verbeux, contraignant car hyper automatisable, evolutif rapprochement JSON Scema.
+Mais diablement efficace et approche schema first vraiment chouette. Tooling fichtrement efficace pour une bonne Experience (cf octo)
+
+Mes paroisses :
+ - generation d'admin : react-admin (et Api Plateform)
+ - coding caen camp
+
