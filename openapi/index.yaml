@@ -20,6 +20,9 @@ servers:
   - url: http://localhost:5004
     description: >-
       Serveur de mocks avec [APISprout](https://github.com/danielgtaylor/apisprout)
+  - url: http://localhost:4999
+    description: >-
+      Serveur Express minimalist
 security: []
 tags:
   - name: Players

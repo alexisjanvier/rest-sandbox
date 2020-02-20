@@ -1,6 +1,14 @@
 version: "3.5"
 
 services:
+    frda:
+        image: node:13-alpine
+        volumes:
+            - .:/app
+        working_dir: /app
+        ports:
+            - 4999:3000
+        command: npm run start-api
     redoc:
         image: node:13-alpine
         volumes:

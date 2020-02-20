@@ -34,7 +34,7 @@ PlayerMoreItem:
   properties:
     question:
       type: string
-      minLength: 20
+      minLength: 10
       maxLength: 999
     answer:
       type: string
