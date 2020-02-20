@@ -169,6 +169,7 @@ Tooling :
 - Generation des tests
 - serveur de mock
 - generation de clients et de serveur
+- portail de développeur, exemple ARTE !
 
 Pour le conclusion, verbeux, contraignant car hyper automatisable, evolutif rapprochement JSON Scema.
 Mais diablement efficace et approche schema first vraiment chouette. Tooling fichtrement efficace pour une bonne Experience (cf octo)

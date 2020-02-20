@@ -1,9 +1,39 @@
 Players:
   get:
-    description: Retourne la liste des tous.tes les joureurs.euses. Cette liste est filtrable et triable.
+    description: >-
+      ### Retourne la liste des tous.tes les joureurs.euses.
+
+      - Cette liste est filtrable et triable.
+
+      - Un exemple de liste en ligne : [Les pétroleuses](http://roller-derby-caen.fr/les-petroleuses/)
     operationId: getPlayerList
     tags:
       - Players
+    parameters:
+      - name: filter
+        in: query
+        description: Filters to apply to query. It's a stringified json object, with key/value filter separated by comma
+        required: false
+        explode: true
+        schema:
+          type: string
+        example: '{"number":75,"name":"Vit Ô Bar"}'
+      - name: sort
+        in: query
+        description: Sort to apply to query. A stringified array with [sortProp, sortDirection]
+        required: false
+        explode: true
+        schema:
+          type: string
+        example: '["id","ASC"]'
+      - name: pagination
+        in: query
+        description: Pagination parameters. A stringified array with [perPage, currentPage]
+        required: false
+        explode: true
+        schema:
+          type: string
+        example: "[10,3]"
     responses:
       "200":
         description: Une liste de joueurs.euses.
