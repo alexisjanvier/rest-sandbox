@@ -1,23 +1,24 @@
 openapi: 3.0.2
 info:
-    version: 1.0.0
-    title: The Famous Roller Derby API - FRDA
-    description: Trouver toutes les informations sur les équipes et les matchs de Roller Derby en Europe.
-    termsOfService: https://roller-derby.io/api/terms/
-    contact:
-        name: FRDA Support
-        url: https://roller-derby.io/api/support
-        email: api@roller-derby.io
-    license:
-        name: GNU GPLv3
-        url: https://github.com/CaenCamp/jobs-caen-camp/blob/master/LICENSE
+  version: 1.0.0
+  title: The Famous Roller Derby API - FRDA
+  description: Trouver toutes les informations sur les équipes et les matchs de Roller Derby en Europe.
+  termsOfService: https://roller-derby.io/api/terms/
+  contact:
+    name: FRDA Support
+    url: https://roller-derby.io/api/support
+    email: api@roller-derby.io
+  license:
+    name: GNU GPLv3
+    url: https://github.com/CaenCamp/jobs-caen-camp/blob/master/LICENSE
 security: []
-tags: 
-  - name: my tag
-paths: {}
+tags:
+  - name: Players
+    description: Toutes les opérations liées aux joueurs.euses.
+paths:
+  $ref: paths/index.yaml
 components:
-    securitySchemes: {}
-    schemas:
-      '$ref': schemas/index.yaml
-    parameters: {}
-
+  securitySchemes: {}
+  schemas:
+    $ref: schemas/index.yaml
+  parameters: {}

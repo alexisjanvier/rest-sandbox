@@ -1,0 +1,39 @@
+Players:
+  get:
+    description: Retourne la liste des tous.tes les joureurs.euses. Cette liste est filtrable et triable.
+    operationId: getPlayerList
+    tags:
+      - Players
+    responses:
+      "200":
+        description: Une liste de joueurs.euses.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/player.yaml#/Player"
+  post:
+    description: Ajoute un.e joueur.euse.
+    operationId: createPlayer
+    tags:
+      - Players
+    requestBody:
+      content:
+        multipart/form-data:
+          schema:
+            properties:
+              file:
+                type: array
+                items:
+                  type: string
+                  format: binary
+              player:
+                $ref: "../schemas/player.yaml#/Player"
+    responses:
+      "200":
+        description: Le.a joueur.euse. nouvellement créé.e.
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/player.yaml#/Player"

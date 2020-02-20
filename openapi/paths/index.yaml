@@ -1,0 +1,2 @@
+/players:
+  $ref: "players.yaml#/Players"

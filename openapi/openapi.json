@@ -18,10 +18,222 @@
   "security": [],
   "tags": [
     {
-      "name": "my tag"
+      "name": "Players",
+      "description": "Toutes les opérations liées aux joueurs.euses."
     }
   ],
-  "paths": {},
+  "paths": {
+    "/players": {
+      "get": {
+        "description": "Retourne la liste des tous.tes les joureurs.euses. Cette liste est filtrable et triable.",
+        "operationId": "getPlayerList",
+        "tags": [
+          "Players"
+        ],
+        "responses": {
+          "200": {
+            "description": "Une liste de joueurs.euses.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "description": "Un.e joueur.euse de Roller Derby",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "readOnly": true
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 3,
+                        "maxLength": 50
+                      },
+                      "number": {
+                        "type": "integer",
+                        "maximum": 9999,
+                        "format": "int32"
+                      },
+                      "picture": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "more": {
+                        "type": "array",
+                        "minItems": 0,
+                        "maxItems": 5,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "question": {
+                              "type": "string",
+                              "minLength": 20,
+                              "maxLength": 999
+                            },
+                            "answer": {
+                              "type": "string",
+                              "nullable": true
+                            }
+                          },
+                          "required": [
+                            "question"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "number",
+                      "picture"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Ajoute un.e joueur.euse.",
+        "operationId": "createPlayer",
+        "tags": [
+          "Players"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "file": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  },
+                  "player": {
+                    "description": "Un.e joueur.euse de Roller Derby",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "readOnly": true
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 3,
+                        "maxLength": 50
+                      },
+                      "number": {
+                        "type": "integer",
+                        "maximum": 9999,
+                        "format": "int32"
+                      },
+                      "picture": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "more": {
+                        "type": "array",
+                        "minItems": 0,
+                        "maxItems": 5,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "question": {
+                              "type": "string",
+                              "minLength": 20,
+                              "maxLength": 999
+                            },
+                            "answer": {
+                              "type": "string",
+                              "nullable": true
+                            }
+                          },
+                          "required": [
+                            "question"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "number",
+                      "picture"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Le.a joueur.euse. nouvellement créé.e.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Un.e joueur.euse de Roller Derby",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "readOnly": true
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 3,
+                      "maxLength": 50
+                    },
+                    "number": {
+                      "type": "integer",
+                      "maximum": 9999,
+                      "format": "int32"
+                    },
+                    "picture": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "more": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 5,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "question": {
+                            "type": "string",
+                            "minLength": 20,
+                            "maxLength": 999
+                          },
+                          "answer": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        },
+                        "required": [
+                          "question"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "number",
+                    "picture"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "components": {
     "securitySchemes": {},
     "schemas": {
