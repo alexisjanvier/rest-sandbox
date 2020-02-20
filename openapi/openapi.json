@@ -2,8 +2,8 @@
   "openapi": "3.0.2",
   "info": {
     "version": "1.0.0",
-    "title": "The Famous Roller Derby API - FRDA",
-    "description": "Trouver toutes les informations sur les équipes et les matchs de Roller Derby en Europe.",
+    "title": "The Fabulous Roller Derby API",
+    "description": "### Trouver toutes les informations sur les équipes et les matchs de Roller Derby en Europe. ![Roller Derby](https://images.vexels.com/media/users/3/148014/isolated/lists/4086a408e0bd425b7142641ac6cfa68e-roller-skate-shoe-sketch.png)",
     "termsOfService": "https://roller-derby.io/api/terms/",
     "contact": {
       "name": "FRDA Support",
@@ -12,7 +12,7 @@
     },
     "license": {
       "name": "GNU GPLv3",
-      "url": "https://github.com/CaenCamp/jobs-caen-camp/blob/master/LICENSE"
+      "url": "https://roller-derby.io/api/LICENSE"
     }
   },
   "security": [],
@@ -208,6 +208,317 @@
         "responses": {
           "200": {
             "description": "Le.a joueur.euse. nouvellement créé.e.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Un.e joueur.euse de Roller Derby",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "readOnly": true
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 3,
+                      "maxLength": 50
+                    },
+                    "number": {
+                      "type": "integer",
+                      "maximum": 9999,
+                      "format": "int32"
+                    },
+                    "picture": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "more": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 5,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "question": {
+                            "type": "string",
+                            "minLength": 20,
+                            "maxLength": 999
+                          },
+                          "answer": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        },
+                        "required": [
+                          "question"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "number",
+                    "picture"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/players/{playerId}": {
+      "get": {
+        "description": "Obtenir toutes les informations sur un.e joueur.euse.",
+        "operationId": "getPlayer",
+        "tags": [
+          "Players"
+        ],
+        "parameters": [
+          {
+            "name": "playerId",
+            "in": "path",
+            "description": "L'identifiant du.de la joueur.euse.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Les informations sur le.a joueur.euse demandé.e.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Un.e joueur.euse de Roller Derby",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "readOnly": true
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 3,
+                      "maxLength": 50
+                    },
+                    "number": {
+                      "type": "integer",
+                      "maximum": 9999,
+                      "format": "int32"
+                    },
+                    "picture": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "more": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 5,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "question": {
+                            "type": "string",
+                            "minLength": 20,
+                            "maxLength": 999
+                          },
+                          "answer": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        },
+                        "required": [
+                          "question"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "number",
+                    "picture"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Mettre à jour les informations sur un.e joueur.euse.",
+        "operationId": "updatePlayer",
+        "tags": [
+          "Players"
+        ],
+        "parameters": [
+          {
+            "name": "playerId",
+            "in": "path",
+            "description": "L'identifiant du.de la joueur.euse.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "file": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  },
+                  "player": {
+                    "description": "Un.e joueur.euse de Roller Derby",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "readOnly": true
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 3,
+                        "maxLength": 50
+                      },
+                      "number": {
+                        "type": "integer",
+                        "maximum": 9999,
+                        "format": "int32"
+                      },
+                      "picture": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "more": {
+                        "type": "array",
+                        "minItems": 0,
+                        "maxItems": 5,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "question": {
+                              "type": "string",
+                              "minLength": 20,
+                              "maxLength": 999
+                            },
+                            "answer": {
+                              "type": "string",
+                              "nullable": true
+                            }
+                          },
+                          "required": [
+                            "question"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "number",
+                      "picture"
+                    ]
+                  }
+                },
+                "required": [
+                  "player"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Les informations mises à jours du.de la joueur.euse demandé.e.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Un.e joueur.euse de Roller Derby",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "readOnly": true
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 3,
+                      "maxLength": 50
+                    },
+                    "number": {
+                      "type": "integer",
+                      "maximum": 9999,
+                      "format": "int32"
+                    },
+                    "picture": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "more": {
+                      "type": "array",
+                      "minItems": 0,
+                      "maxItems": 5,
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "question": {
+                            "type": "string",
+                            "minLength": 20,
+                            "maxLength": 999
+                          },
+                          "answer": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        },
+                        "required": [
+                          "question"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "number",
+                    "picture"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Supprimer un.e joueur.euse.",
+        "operationId": "deletePlayer",
+        "tags": [
+          "Players"
+        ],
+        "parameters": [
+          {
+            "name": "playerId",
+            "in": "path",
+            "description": "L'identifiant du.de la joueur.euse.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Les informations sur le.a joueur.euse supprimé.e.",
             "content": {
               "application/json": {
                 "schema": {

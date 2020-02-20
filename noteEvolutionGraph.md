@@ -178,3 +178,30 @@ Mes paroisses :
  - generation d'admin : react-admin (et Api Plateform)
  - coding caen camp
 
+
+
+		parameters:
+		- name: filter
+			in: query
+			description: Filters to apply to query. It's a stringified json object, with key/value filter separated by comma
+			required: false
+			explode: true
+			schema:
+				type: string
+			example: '{"number":75,"name":"Vit Ô Bar"}'
+		- name: sort
+			in: query
+			description: Sort to apply to query. A stringified array with [sortProp, sortDirection]
+			required: false
+			explode: true
+			schema:
+				type: string
+			example: '["id","ASC"]'
+		- name: pagination
+			in: query
+			description: Pagination parameters. A stringified array with [perPage, currentPage]
+			required: false
+			explode: true
+			schema:
+				type: string
+			example: "[10,3]"

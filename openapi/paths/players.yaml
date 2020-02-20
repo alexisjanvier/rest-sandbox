@@ -67,3 +67,75 @@ Players:
           application/json:
             schema:
               $ref: "../schemas/player.yaml#/Player"
+Player:
+  get:
+    description: Obtenir toutes les informations sur un.e joueur.euse.
+    operationId: getPlayer
+    tags:
+      - Players
+    parameters:
+      - name: playerId
+        in: path
+        description: L'identifiant du.de la joueur.euse.
+        required: true
+        schema:
+          type: string
+    responses:
+      "200":
+        description: Les informations sur le.a joueur.euse demandé.e.
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/player.yaml#/Player"
+  put:
+    description: Mettre à jour les informations sur un.e joueur.euse.
+    operationId: updatePlayer
+    tags:
+      - Players
+    parameters:
+      - name: playerId
+        in: path
+        description: L'identifiant du.de la joueur.euse.
+        required: true
+        schema:
+          type: string
+    requestBody:
+      content:
+        multipart/form-data:
+          schema:
+            properties:
+              file:
+                type: array
+                items:
+                  type: string
+                  format: binary
+              player:
+                $ref: "../schemas/player.yaml#/Player"
+            required:
+              - player
+    responses:
+      "200":
+        description: Les informations mises à jours du.de la joueur.euse demandé.e.
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/player.yaml#/Player"
+  delete:
+    description: Supprimer un.e joueur.euse.
+    operationId: deletePlayer
+    tags:
+      - Players
+    parameters:
+      - name: playerId
+        in: path
+        description: L'identifiant du.de la joueur.euse.
+        required: true
+        schema:
+          type: string
+    responses:
+      "200":
+        description: Les informations sur le.a joueur.euse supprimé.e.
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/player.yaml#/Player"
