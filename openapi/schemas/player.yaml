@@ -1,0 +1,43 @@
+---
+Player:
+  description: "Un.e joueur.euse de Roller Derby"
+  type: object
+  properties:
+    id:
+      type: string
+      readOnly: true
+    name:
+      type: string
+      minLength: 3
+      maxLength: 50
+    number:
+      type: integer
+      maximum: 9999
+      format: int32
+    picture:
+      type: string
+      nullable: true
+    more:
+      type: array
+      minItems: 0
+      maxItems: 5
+      items:
+        $ref: "#/PlayerMoreItem"
+  required:
+    - id
+    - name
+    - number
+    - picture
+
+PlayerMoreItem:
+  type: object
+  properties:
+    question:
+      type: string
+      minLength: 10
+      maxLength: 999
+    answer:
+      type: string
+      nullable: true
+  required:
+    - question

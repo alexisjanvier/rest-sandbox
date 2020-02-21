@@ -1,0 +1,36 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: The Fabulous Roller Derby API
+  description: >-
+    ### Trouver toutes les informations sur les équipes et les matchs de Roller Derby en Europe.
+    ![Roller Derby](https://images.vexels.com/media/users/3/148014/isolated/lists/4086a408e0bd425b7142641ac6cfa68e-roller-skate-shoe-sketch.png)
+  termsOfService: https://roller-derby.io/api/terms/
+  contact:
+    name: FRDA Support
+    url: https://roller-derby.io/api/support
+    email: api@roller-derby.io
+  license:
+    name: GNU GPLv3
+    url: https://roller-derby.io/api/LICENSE
+servers:
+  - url: http://localhost:4003
+    description: >-
+      Serveur de mocks avec Prism - https://stoplight.io/open-source/prism
+  - url: http://localhost:4004
+    description: >-
+      Serveur de mocks avec APISprout - https://github.com/danielgtaylor/apisprout
+  - url: http://localhost:3001
+    description: >-
+      Serveur Express minimalist
+security: []
+tags:
+  - name: Players
+    description: Toutes les opérations liées aux joueurs.euses.
+paths:
+  $ref: paths/index.yaml
+components:
+  securitySchemes: {}
+  schemas:
+    $ref: schemas/index.yaml
+  parameters: {}

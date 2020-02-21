@@ -1,0 +1,16 @@
+{
+    "name": "rest-sandbox",
+    "version": "0.0.1",
+    "description": "Some exemples about REST APIs",
+    "main": "index.js",
+    "repository": "git@github.com:alexisjanvier/rest-sandbox.git",
+    "author": "Alexis Janvier <alexis@marmelab.com> (https://www.marmelab.com)",
+    "license": "GPL-3.0",
+    "private": false,
+    "dependencies": {
+        "eslint": "6.8.0",
+        "eslint-config-prettier": "6.10.0",
+        "eslint-plugin-prettier": "3.1.2",
+        "prettier": "1.19.1"
+    }
+}

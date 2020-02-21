@@ -1,0 +1,54 @@
+version: "3.5"
+
+services:
+    webapp:
+        image: node:13-alpine
+        volumes:
+            - .:/app
+        working_dir: /app/webapp
+        ports:
+            - 3000:3000
+        command: npm run start
+    api:
+        image: node:13-alpine
+        volumes:
+            - .:/app
+        working_dir: /app/api
+        ports:
+            - 3001:3000
+        command: npm run start-api
+    redoc:
+        image: node:13-alpine
+        volumes:
+            - .:/app
+        working_dir: "/app/openapi"
+        user: "${UID}:${GID}"
+        ports:
+            - 4000:5000
+        command: "npm run openapi:serve"
+    swagger-ui:
+        image: swaggerapi/swagger-ui
+        volumes:
+            - ./openapi:/openapi
+        environment:
+            - SWAGGER_JSON=/openapi/openapi.json
+        ports:
+            - 4001:8080
+    swagger-editor:
+        image: swaggerapi/swagger-editor
+        ports:
+            - 4002:8080
+    prism:
+        image: stoplight/prism:3
+        volumes:
+            - ./openapi:/openapi
+        ports:
+            - 4003:4010
+        command: mock -d -h 0.0.0.0 "/openapi/openapi.json"
+    api-sprout:
+        image: danielgtaylor/apisprout
+        volumes:
+            - ./openapi:/openapi
+        ports:
+            - 4004:8000
+        command: --watch /openapi/openapi.json
