@@ -11,8 +11,8 @@
         "openapi:bundle": "swagger-cli bundle ./openapi/index.yaml -o ./openapi/openapi.json -r",
         "openapi:check": "speccy lint ./openapi/openapi.json",
         "openapi:serve": "speccy serve ./openapi/openapi.json",
-        "generate-fetcher": "restful-react import --file openapi/openapi.json --output react/frdaFetcher.tsx",
-        "postgenerate-fetcher": "prettier react/frdaFetcher.tsx --write",
+        "generate-fetcher": "restful-react import --config restful-react.config.js",
+        "postgenerate-fetcher": "prettier webapp/src/apiClient/** --write",
         "start-api": "nodemon ./api/index.js 0.0.0.0 8080 --watch api"
     },
     "dependencies": {

@@ -9,6 +9,14 @@ services:
         ports:
             - 4999:3000
         command: npm run start-api
+    webapp:
+        image: node:13-alpine
+        volumes:
+            - .:/app
+        working_dir: /app/webapp
+        ports:
+            - 5999:3000
+        command: npm run start
     redoc:
         image: node:13-alpine
         volumes:
