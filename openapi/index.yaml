@@ -14,13 +14,13 @@ info:
     name: GNU GPLv3
     url: https://roller-derby.io/api/LICENSE
 servers:
-  - url: http://localhost:5003
+  - url: http://localhost:4003
     description: >-
-      Serveur de mocks avec [Prism](https://stoplight.io/open-source/prism)
-  - url: http://localhost:5004
+      Serveur de mocks avec Prism - https://stoplight.io/open-source/prism
+  - url: http://localhost:4004
     description: >-
-      Serveur de mocks avec [APISprout](https://github.com/danielgtaylor/apisprout)
-  - url: http://localhost:4999
+      Serveur de mocks avec APISprout - https://github.com/danielgtaylor/apisprout
+  - url: http://localhost:3001
     description: >-
       Serveur Express minimalist
 security: []

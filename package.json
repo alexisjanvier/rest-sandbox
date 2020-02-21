@@ -7,29 +7,10 @@
     "author": "Alexis Janvier <alexis@marmelab.com> (https://www.marmelab.com)",
     "license": "GPL-3.0",
     "private": false,
-    "scripts": {
-        "openapi:bundle": "swagger-cli bundle ./openapi/index.yaml -o ./openapi/openapi.json -r",
-        "openapi:check": "speccy lint ./openapi/openapi.json",
-        "openapi:serve": "speccy serve ./openapi/openapi.json",
-        "generate-fetcher": "restful-react import --config restful-react.config.js",
-        "postgenerate-fetcher": "prettier webapp/src/apiClient/** --write",
-        "start-api": "nodemon ./api/index.js 0.0.0.0 8080 --watch api"
-    },
     "dependencies": {
-        "@types/react": "16.9.20",
         "eslint": "6.8.0",
         "eslint-config-prettier": "6.10.0",
         "eslint-plugin-prettier": "3.1.2",
-        "express": "4.17.1",
-        "express-openapi-validator": "3.7.2",
-        "mobx": "5.15.4",
-        "nodemon": "2.0.2",
-        "prettier": "1.19.1",
-        "react": "16.12.0",
-        "react-dom": "16.12.0",
-        "restful-react": "9.11.1",
-        "speccy": "0.11.0",
-        "styled-components": "5.0.1",
-        "swagger-cli": "3.0.1"
+        "prettier": "1.19.1"
     }
 }

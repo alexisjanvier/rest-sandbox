@@ -1,7 +1,8 @@
 {
-  "name": "webappp",
+  "name": "@api-sandbox/webapp",
+  "description": "A simple CRA webapp to call the API",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "4.2.4",
     "@testing-library/react": "9.4.0",
@@ -14,13 +15,16 @@
     "react-dom": "^16.12.0",
     "react-router-dom": "5.1.2",
     "react-scripts": "3.4.0",
+    "restful-react": "9.11.1",
     "typescript": "3.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate-fetcher": "restful-react import --config restful-react.config.js",
+    "postgenerate-fetcher": "prettier src/apiClient/** --write"
   },
   "eslintConfig": {
     "extends": "react-app"

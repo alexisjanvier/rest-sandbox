@@ -1,0 +1,20 @@
+{
+    "name": "@api-sandbox/api-express",
+    "version": "0.0.1",
+    "description": "A simple Rest server with express.js",
+    "main": "index.js",
+    "repository": "git@github.com:alexisjanvier/rest-sandbox.git",
+    "author": "Alexis Janvier <alexis@marmelab.com> (https://www.marmelab.com)",
+    "license": "GPL-3.0",
+    "private": false,
+    "scripts": {
+        "start-api": "nodemon ./index.js 0.0.0.0 8080 --watch api"
+    },
+    "dependencies": {
+        "express": "4.17.1",
+        "express-openapi-validator": "3.7.2"
+    },
+    "devDependencies": {
+        "nodemon": "2.0.2"
+    }
+}

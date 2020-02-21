@@ -1,0 +1,24 @@
+{
+    "name": "@api-sandbox/open-api",
+    "version": "0.0.1",
+    "description": "The OpenAPI workspace with tooling",
+    "main": "index.js",
+    "repository": "git@github.com:alexisjanvier/rest-sandbox.git",
+    "author": "Alexis Janvier <alexis@marmelab.com> (https://www.marmelab.com)",
+    "license": "GPL-3.0",
+    "private": false,
+    "scripts": {
+        "openapi:bundle": "swagger-cli bundle ./index.yaml -o ./openapi.json -r",
+        "openapi:check": "speccy lint ./openapi.json",
+        "openapi:serve": "speccy serve ./openapi.json"
+    },
+    "dependencies": {
+        "@types/react": "16.9.20",
+        "mobx": "5.15.4",
+        "react": "16.12.0",
+        "react-dom": "16.12.0",
+        "speccy": "0.11.0",
+        "styled-components": "5.0.1",
+        "swagger-cli": "3.0.1"
+    }
+}

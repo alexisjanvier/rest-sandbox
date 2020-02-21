@@ -67,7 +67,7 @@ export type GetPlayerListProps = Omit<
 export const GetPlayerList = (props: GetPlayerListProps) => (
     <Get<GetPlayerListResponse, unknown, GetPlayerListQueryParams>
         path={`/players`}
-        base="http://localhost:5002"
+        base="http://localhost:4003"
         {...props}
     />
 );
@@ -85,7 +85,7 @@ export type UseGetPlayerListProps = Omit<
 export const useGetPlayerList = (props: UseGetPlayerListProps) =>
     useGet<GetPlayerListResponse, unknown, GetPlayerListQueryParams>(
         `/players`,
-        { base: "http://localhost:5002", ...props }
+        { base: "http://localhost:4003", ...props }
     );
 
 export type CreatePlayerResponse = {
@@ -111,7 +111,7 @@ export const CreatePlayer = (props: CreatePlayerProps) => (
     <Mutate<CreatePlayerResponse, unknown, void, void>
         verb="POST"
         path={`/players`}
-        base="http://localhost:5002"
+        base="http://localhost:4003"
         {...props}
     />
 );
@@ -126,7 +126,7 @@ export type UseCreatePlayerProps = Omit<
  */
 export const useCreatePlayer = (props: UseCreatePlayerProps) =>
     useMutate<CreatePlayerResponse, unknown, void, void>("POST", `/players`, {
-        base: "http://localhost:5002",
+        base: "http://localhost:4003",
         ...props
     });
 
@@ -152,7 +152,7 @@ export type GetPlayerProps = Omit<
 export const GetPlayer = ({ playerId, ...props }: GetPlayerProps) => (
     <Get<GetPlayerResponse, unknown, void>
         path={`/players/${playerId}`}
-        base="http://localhost:5002"
+        base="http://localhost:4003"
         {...props}
     />
 );
@@ -167,7 +167,7 @@ export type UseGetPlayerProps = Omit<
  */
 export const useGetPlayer = ({ playerId, ...props }: UseGetPlayerProps) =>
     useGet<GetPlayerResponse, unknown, void>(`/players/${playerId}`, {
-        base: "http://localhost:5002",
+        base: "http://localhost:4003",
         ...props
     });
 
@@ -194,7 +194,7 @@ export const UpdatePlayer = ({ playerId, ...props }: UpdatePlayerProps) => (
     <Mutate<UpdatePlayerResponse, unknown, void, void>
         verb="PUT"
         path={`/players/${playerId}`}
-        base="http://localhost:5002"
+        base="http://localhost:4003"
         {...props}
     />
 );
@@ -211,7 +211,7 @@ export const useUpdatePlayer = ({ playerId, ...props }: UseUpdatePlayerProps) =>
     useMutate<UpdatePlayerResponse, unknown, void, void>(
         "PUT",
         `/players/${playerId}`,
-        { base: "http://localhost:5002", ...props }
+        { base: "http://localhost:4003", ...props }
     );
 
 export type DeletePlayerResponse = {
@@ -237,7 +237,7 @@ export const DeletePlayer = (props: DeletePlayerProps) => (
     <Mutate<DeletePlayerResponse, unknown, void, string>
         verb="DELETE"
         path={`/players`}
-        base="http://localhost:5002"
+        base="http://localhost:4003"
         {...props}
     />
 );
@@ -254,5 +254,5 @@ export const useDeletePlayer = (props: UseDeletePlayerProps) =>
     useMutate<DeletePlayerResponse, unknown, void, string>(
         "DELETE",
         `/players`,
-        { base: "http://localhost:5002", ...props }
+        { base: "http://localhost:4003", ...props }
     );
