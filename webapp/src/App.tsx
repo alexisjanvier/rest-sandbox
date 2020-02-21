@@ -8,6 +8,8 @@ import {
 
 import { Api } from './Api';
 import { Prism } from './Prism';
+import { PlayerPrism } from './PlayerPrism';
+import { PlayerApi } from './PlayerAPI';
 
 export default function App() {
   return (
@@ -24,9 +26,11 @@ export default function App() {
           </ul>
         </nav>
         <Switch>
-          <Route path="/api">
+          <Route exact path="/api">
             <Api />
           </Route>
+          <Route exact path="/api/player/:playerId" component={PlayerApi as any}></Route>
+          <Route exact path="/player/:playerId" component={PlayerPrism as any}></Route>
           <Route path="/">
             <Prism />
           </Route>
