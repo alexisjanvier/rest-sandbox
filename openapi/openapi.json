@@ -138,6 +138,12 @@
                       "picture"
                     ]
                   }
+                },
+                "examples": {
+                  "shortList": {
+                    "summary": "Une courte liste de trois joueuses",
+                    "value": "[\n  {\n    \"number\": 187,\n    \"picture\": \"http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_187-Rice-Cooker-.jpg\",\n    \"id\": \"rice-cooker\",\n    \"name\": \"Rice Cooker\",\n    \"more\": [\n      {\n        \"question\": \"Pourquoi ce nom ?\",\n        \"response\": \"J’suis pas contre l’idée d’avoir tort\"\n      }\n    ]\n  },\n  {\n    \"number\": 171,\n    \"picture\": \"http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_171-Claraclette.jpg\",\n    \"id\": \"claraclette\",\n    \"name\": \"Claraclette\",\n    \"more\": [\n      {\n        \"question\": \"Pourquoi ce nom ?\",\n        \"response\": \"J’suis pas contre l’idée d’avoir tort\"\n      }\n    ]\n  },\n  {\n    \"number\": 75,\n    \"picture\": \"http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg\",\n    \"id\": \"valquirit\",\n    \"name\": \"Valquirit\",\n    \"more\": [\n      {\n        \"question\": \"Pourquoi ce nom ?\",\n        \"response\": \"J’suis pas contre l’idée d’avoir tort\"\n      }\n    ]\n  }\n]"
+                  }
                 }
               }
             }
@@ -215,6 +221,12 @@
                     ]
                   }
                 }
+              },
+              "examples": {
+                "newPlayer": {
+                  "summary": "Une nouvelle joueuse",
+                  "value": "{\n  file: [],\n  player : {\n    \"number\": 75,\n    \"picture\": \"http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg\",\n    \"id\": \"valquirit\",\n    \"name\": \"Valquirit\",\n    \"more\": [\n      {\n        \"question\": \"Pourquoi ce nom ?\",\n        \"response\": \"J’suis pas contre l’idée d’avoir tort\"\n      }\n    ]\n  }\n}"
+                }
               }
             }
           }
@@ -275,6 +287,12 @@
                     "number",
                     "picture"
                   ]
+                },
+                "examples": {
+                  "singlePlayer": {
+                    "summary": "Une joueuse",
+                    "value": "{\n  \"number\": 75,\n  \"picture\": \"http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg\",\n  \"id\": \"valquirit\",\n  \"name\": \"Valquirit\",\n  \"more\": [\n    {\n      \"question\": \"Pourquoi ce nom ?\",\n      \"response\": \"J’suis pas contre l’idée d’avoir tort\"\n    }\n  ]\n}"
+                  }
                 }
               }
             }
@@ -297,6 +315,10 @@
             "required": true,
             "schema": {
               "type": "string"
+            },
+            "example": {
+              "summary": "Un identifiant de joueur.euse",
+              "value": "valquirit"
             }
           }
         ],
@@ -356,6 +378,10 @@
                     "number",
                     "picture"
                   ]
+                },
+                "example": {
+                  "summary": "Une joueuse",
+                  "value": "{\n  \"number\": 75,\n  \"picture\": \"http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg\",\n  \"id\": \"valquirit\",\n  \"name\": \"Valquirit\",\n  \"more\": [\n    {\n      \"question\": \"Pourquoi ce nom ?\",\n      \"response\": \"J’suis pas contre l’idée d’avoir tort\"\n    }\n  ]\n}"
                 }
               }
             }
@@ -376,6 +402,10 @@
             "required": true,
             "schema": {
               "type": "string"
+            },
+            "example": {
+              "summary": "Un identifiant de joueur.euse",
+              "value": "valquirit"
             }
           }
         ],
@@ -507,6 +537,12 @@
                     "number",
                     "picture"
                   ]
+                },
+                "examples": {
+                  "singlePlayer": {
+                    "summary": "Une joueuse",
+                    "value": "{\n  \"number\": 75,\n  \"picture\": \"http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg\",\n  \"id\": \"valquirit\",\n  \"name\": \"Valquirit\",\n  \"more\": [\n    {\n      \"question\": \"Pourquoi ce nom ?\",\n      \"response\": \"J’suis pas contre l’idée d’avoir tort\"\n    }\n  ]\n}"
+                  }
                 }
               }
             }
@@ -527,6 +563,10 @@
             "required": true,
             "schema": {
               "type": "string"
+            },
+            "example": {
+              "summary": "Un identifiant de joueur.euse",
+              "value": "valquirit"
             }
           }
         ],
@@ -586,6 +626,12 @@
                     "number",
                     "picture"
                   ]
+                },
+                "examples": {
+                  "singlePlayer": {
+                    "summary": "Une joueuse",
+                    "value": "{\n  \"number\": 75,\n  \"picture\": \"http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg\",\n  \"id\": \"valquirit\",\n  \"name\": \"Valquirit\",\n  \"more\": [\n    {\n      \"question\": \"Pourquoi ce nom ?\",\n      \"response\": \"J’suis pas contre l’idée d’avoir tort\"\n    }\n  ]\n}"
+                  }
                 }
               }
             }

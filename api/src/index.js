@@ -2,7 +2,7 @@ const express = require('express')
 const OpenApiValidator = require('express-openapi-validator').OpenApiValidator;
 
 const data = require('./petroleuses.json');
-const apiSpec = require('../openapi/openapi.json');
+const apiSpec = require('../../openapi/openapi.json');
 const app = express()
 const port = 3000
 

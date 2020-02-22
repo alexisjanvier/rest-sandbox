@@ -44,6 +44,16 @@ start-tooling: ## Start tooling containers, including documentation
 stop-tooling: ## Stop toolings containers
 	@docker-compose down
 
+# ===================================================================
+# Tests =============================================================
+# ===================================================================
+
+connect-api: ## Connect to express api container (useful for debugging)
+	@docker-compose exec api ash
+
+test-api: ## Start test on express API witg Dredd
+	@${DOCKER_API} npm run test
+
 # =====================================================================
 # SDK generator =======================================================
 # =====================================================================

@@ -43,6 +43,48 @@ Players:
               type: array
               items:
                 $ref: "../schemas/player.yaml#/Player"
+            examples:
+              shortList:
+                summary: Une courte liste de trois joueuses
+                value: >-
+                  [
+                    {
+                      "number": 187,
+                      "picture": "http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_187-Rice-Cooker-.jpg",
+                      "id": "rice-cooker",
+                      "name": "Rice Cooker",
+                      "more": [
+                        {
+                          "question": "Pourquoi ce nom ?",
+                          "response": "J’suis pas contre l’idée d’avoir tort"
+                        }
+                      ]
+                    },
+                    {
+                      "number": 171,
+                      "picture": "http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_171-Claraclette.jpg",
+                      "id": "claraclette",
+                      "name": "Claraclette",
+                      "more": [
+                        {
+                          "question": "Pourquoi ce nom ?",
+                          "response": "J’suis pas contre l’idée d’avoir tort"
+                        }
+                      ]
+                    },
+                    {
+                      "number": 75,
+                      "picture": "http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg",
+                      "id": "valquirit",
+                      "name": "Valquirit",
+                      "more": [
+                        {
+                          "question": "Pourquoi ce nom ?",
+                          "response": "J’suis pas contre l’idée d’avoir tort"
+                        }
+                      ]
+                    }
+                  ]
   post:
     description: Ajoute un.e joueur.euse.
     operationId: createPlayer
@@ -60,6 +102,25 @@ Players:
                   format: binary
               player:
                 $ref: "../schemas/player.yaml#/Player"
+          examples:
+            newPlayer:
+              summary: Une nouvelle joueuse
+              value: >-
+                {
+                  file: [],
+                  player : {
+                    "number": 75,
+                    "picture": "http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg",
+                    "id": "valquirit",
+                    "name": "Valquirit",
+                    "more": [
+                      {
+                        "question": "Pourquoi ce nom ?",
+                        "response": "J’suis pas contre l’idée d’avoir tort"
+                      }
+                    ]
+                  }
+                }
     responses:
       "200":
         description: Le.a joueur.euse. nouvellement créé.e.
@@ -67,6 +128,22 @@ Players:
           application/json:
             schema:
               $ref: "../schemas/player.yaml#/Player"
+            examples:
+              singlePlayer:
+                summary: Une joueuse
+                value: >-
+                  {
+                    "number": 75,
+                    "picture": "http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg",
+                    "id": "valquirit",
+                    "name": "Valquirit",
+                    "more": [
+                      {
+                        "question": "Pourquoi ce nom ?",
+                        "response": "J’suis pas contre l’idée d’avoir tort"
+                      }
+                    ]
+                  }
 Player:
   get:
     description: Obtenir toutes les informations sur un.e joueur.euse.
@@ -80,6 +157,9 @@ Player:
         required: true
         schema:
           type: string
+        example:
+          summary: Un identifiant de joueur.euse
+          value: valquirit
     responses:
       "200":
         description: Les informations sur le.a joueur.euse demandé.e.
@@ -87,6 +167,21 @@ Player:
           application/json:
             schema:
               $ref: "../schemas/player.yaml#/Player"
+            example:
+              summary: Une joueuse
+              value: >-
+                {
+                  "number": 75,
+                  "picture": "http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg",
+                  "id": "valquirit",
+                  "name": "Valquirit",
+                  "more": [
+                    {
+                      "question": "Pourquoi ce nom ?",
+                      "response": "J’suis pas contre l’idée d’avoir tort"
+                    }
+                  ]
+                }
   put:
     description: Mettre à jour les informations sur un.e joueur.euse.
     operationId: updatePlayer
@@ -99,6 +194,9 @@ Player:
         required: true
         schema:
           type: string
+        example:
+          summary: Un identifiant de joueur.euse
+          value: valquirit
     requestBody:
       content:
         multipart/form-data:
@@ -120,6 +218,22 @@ Player:
           application/json:
             schema:
               $ref: "../schemas/player.yaml#/Player"
+            examples:
+              singlePlayer:
+                summary: Une joueuse
+                value: >-
+                  {
+                    "number": 75,
+                    "picture": "http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg",
+                    "id": "valquirit",
+                    "name": "Valquirit",
+                    "more": [
+                      {
+                        "question": "Pourquoi ce nom ?",
+                        "response": "J’suis pas contre l’idée d’avoir tort"
+                      }
+                    ]
+                  }
   delete:
     description: Supprimer un.e joueur.euse.
     operationId: deletePlayer
@@ -132,6 +246,9 @@ Player:
         required: true
         schema:
           type: string
+        example:
+          summary: Un identifiant de joueur.euse
+          value: valquirit
     responses:
       "200":
         description: Les informations sur le.a joueur.euse supprimé.e.
@@ -139,3 +256,19 @@ Player:
           application/json:
             schema:
               $ref: "../schemas/player.yaml#/Player"
+            examples:
+              singlePlayer:
+                summary: Une joueuse
+                value: >-
+                  {
+                    "number": 75,
+                    "picture": "http://roller-derby-caen.fr/wp-content/uploads/2019/12/RDC_B_75-Valquirit.jpg",
+                    "id": "valquirit",
+                    "name": "Valquirit",
+                    "more": [
+                      {
+                        "question": "Pourquoi ce nom ?",
+                        "response": "J’suis pas contre l’idée d’avoir tort"
+                      }
+                    ]
+                  }

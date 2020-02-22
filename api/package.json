@@ -8,13 +8,15 @@
     "license": "GPL-3.0",
     "private": false,
     "scripts": {
-        "start-api": "nodemon ./index.js 0.0.0.0 8080 --watch api"
+        "start-api": "nodemon ./src/index.js 0.0.0.0 8080 --watch src",
+        "test": "dredd"
     },
     "dependencies": {
         "express": "4.17.1",
-        "express-openapi-validator": "3.7.2"
+        "express-openapi-validator": "3.8.0"
     },
     "devDependencies": {
+        "dredd": "13.0.1",
         "nodemon": "2.0.2"
     }
 }
