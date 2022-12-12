@@ -12,7 +12,7 @@
         "test": "dredd"
     },
     "dependencies": {
-        "express": "4.17.1",
+        "express": "4.17.3",
         "express-openapi-validator": "3.8.0"
     },
     "devDependencies": {
